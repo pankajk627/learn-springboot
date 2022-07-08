@@ -8,6 +8,10 @@ public class LearnSpringBootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LearnSpringBootApplication.class, args);
+		
+		BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSort());
+		int result = binarySearch.binarySearch(new int[] {12, 15},3);
+		System.out.println(result);
 	}
 
 }
