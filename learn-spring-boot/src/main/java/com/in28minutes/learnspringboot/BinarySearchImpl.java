@@ -1,12 +1,22 @@
 package com.in28minutes.learnspringboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearchImpl {
 	
+//	Autowiring by Type
+//	@Autowired
+//	private SortAlgorithm sortAlgorithm;
+
+//  Autowiring by Name
+//	@Autowired
+//	private SortAlgorithm quickSort;
+	
 	@Autowired
+	@Qualifier("quick")
 	private SortAlgorithm sortAlgorithm;
 	
 //  Constructor type injection	
