@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, 
-		proxyMode = ScopedProxyMode.TARGET_CLASS) // To get a new Jdbc connection everytime 
+		proxyMode = ScopedProxyMode.TARGET_CLASS) // To get a new Jdbc connection everytime
 
 //Whenever there is a dependency and its scope is prototype, we need to use Proxy
 

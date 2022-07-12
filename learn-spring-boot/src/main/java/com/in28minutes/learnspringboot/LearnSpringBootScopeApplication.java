@@ -11,6 +11,9 @@ import com.in28minutes.learnspringboot.scope.PersonDAO;
 @SpringBootApplication
 public class LearnSpringBootScopeApplication {
 	
+	//GOF Singleton - One instance per JVM 
+	//Spring Singleton - One Instance per Context
+	
 	private static Logger LOGGER = LoggerFactory.getLogger(LearnSpringBootScopeApplication.class);
 
 	public static void main(String[] args) {
@@ -22,6 +25,7 @@ public class LearnSpringBootScopeApplication {
 		PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
 		
 		LOGGER.info("{}", personDao);
+		LOGGER.info("{}", personDao.getJdbcConnection());
 		LOGGER.info("{}", personDao.getJdbcConnection());
 		
 		LOGGER.info("{}", personDao2);
