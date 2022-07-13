@@ -3,6 +3,7 @@ package com.in28minutes.learnspringboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import com.in28minutes.learnspringboot.basic.BinarySearchImpl;
 
@@ -17,7 +18,7 @@ public class LearnSpringBootBasicApplication {
 
 		// BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSort());
 		// Application Context
-		ApplicationContext applicationContext = SpringApplication.run(LearnSpringBootBasicApplication.class, args);
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(LearnSpringBootBasicApplication.class, args);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 
@@ -28,6 +29,9 @@ public class LearnSpringBootBasicApplication {
 
 		int result = binarySearch.binarySearch(new int[] { 12, 15 }, 3);
 		System.out.println(result);
+		
+		applicationContext.close();
+		
 	}
 
 }
