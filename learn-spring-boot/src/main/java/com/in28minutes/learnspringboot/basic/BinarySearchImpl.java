@@ -7,15 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 // @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Default Scope of a bean is Singleton
 public class BinarySearchImpl {
 	
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+	private static Logger logger = LoggerFactory.getLogger(BinarySearchImpl.class);
 
 //	Autowiring by Type
 //	@Autowired
