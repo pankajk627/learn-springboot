@@ -41,7 +41,7 @@ public class BinarySearchImpl {
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 
-		int[] sortedArray = sortAlgorithm.sort(numbers);
+		//int[] sortedArray = sortAlgorithm.sort(numbers);
 		System.out.println(sortAlgorithm);
 		return 3;
 	}
