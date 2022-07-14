@@ -3,10 +3,15 @@ package com.in28minutes.learnspringboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.in28minutes.learnspringboot.basic.BinarySearchImpl;
 
-@SpringBootApplication
+//@SpringBootApplication
+@Configuration
+@ComponentScan //@ComponentScan("com.in28minutes.learnspringboot")
 public class LearnSpringBootBasicApplication {
 
 	// What are the beans?
@@ -17,7 +22,9 @@ public class LearnSpringBootBasicApplication {
 
 		// BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSort());
 		// Application Context
-		ConfigurableApplicationContext applicationContext = SpringApplication.run(LearnSpringBootBasicApplication.class, args);
+		ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(LearnSpringBootBasicApplication.class);
+				
+				//SpringApplication.run(LearnSpringBootBasicApplication.class, args);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 
