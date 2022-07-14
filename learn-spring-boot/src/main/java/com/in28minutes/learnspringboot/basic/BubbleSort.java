@@ -1,8 +1,9 @@
 package com.in28minutes.learnspringboot.basic;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service
 // @Primary
 // Precedence is given to @Primary than Autowiring by Name
 public class BubbleSort implements SortAlgorithm {
