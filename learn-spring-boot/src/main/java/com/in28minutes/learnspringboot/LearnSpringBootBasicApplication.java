@@ -12,7 +12,7 @@ import com.in28minutes.learnspringboot.basic.BinarySearchImpl;
 @ComponentScan //@ComponentScan("com.in28minutes.learnspringboot")
 public class LearnSpringBootBasicApplication {
 
-	// What are the beans?
+	// What are the spring beans?
 	// What are the dependencies of a bean?
 	// Where to search for the beans?
 
