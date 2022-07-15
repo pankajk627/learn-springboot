@@ -14,7 +14,7 @@ public class LearnSpringBootBasicApplication {
 
 	//What are the spring beans?
 	//What are the dependencies of a bean?
-	// Where to search for the beans?
+	//Where to search for the beans?
 
 	public static void main(String[] args) {
 
