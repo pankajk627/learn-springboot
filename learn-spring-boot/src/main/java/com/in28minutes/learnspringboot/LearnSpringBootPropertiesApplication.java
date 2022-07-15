@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 import com.in28minutes.learnspringboot.properties.SomeExternalService;
 
 @SpringBootApplication
-@PropertySource("classpath:app.properties") // test for file location
+@PropertySource("classpath:app.properties") // test for file location success
 public class LearnSpringBootPropertiesApplication {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(LearnSpringBootPropertiesApplication.class);
