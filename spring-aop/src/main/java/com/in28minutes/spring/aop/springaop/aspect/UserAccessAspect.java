@@ -22,7 +22,7 @@ public class UserAccessAspect {
 	// Advice - The logic which needs to be implemented when the interception is made
 	// Aspect - Combination of Pointcut and Advice
 	// Join Point - Specific interception of a method call
-	// Weaving - The process of implementing the AOP aroung the method call is called Weaving
+	// Weaving - The process of implementing the AOP around the method call is called Weaving
 	// Weaver - The framework which does Weaving is called Weaver
 	
 	@Before("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
