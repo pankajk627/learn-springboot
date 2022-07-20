@@ -15,7 +15,7 @@ public class MethodExecutionCalculationAspect {
 	
 	//@Around("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
 	
-	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		// startTime = x
 		long startTime = System.currentTimeMillis();
