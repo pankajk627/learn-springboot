@@ -25,7 +25,7 @@ public class UserAccessAspect {
 	// Weaving - The process of implementing the AOP aroung the method call is called Weaving
 	// Weaver - The framework which does Weaving is called Weaver
 	
-	@Before("execution(* com.in28minutes.spring.aop.springaop.data.*.*(..))")
+	@Before("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
 	public void before(JoinPoint joinPoint) {
 		//what to do?
 		logger.info("Check for User Access");
