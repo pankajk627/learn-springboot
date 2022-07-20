@@ -18,7 +18,14 @@ public class UserAccessAspect {
 	// What kind of method I would intercept
 	// execution(* PACKAGE.*.*(..))
 	
-	@Before("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+	// Pointcut - The expression which defines what kind of method that would be intercepted
+	// Advice - The logic which needs to be implemented when the interception is made
+	// Aspect - Combination of Pointcut and Advice
+	// Join Point - Specific interception of a method call
+	// Weaving - The process of implementing the AOP aroung the method call is called Weaving
+	// Weaver - The framework which does Weaving is called Weaver
+	
+	@Before("execution(* com.in28minutes.spring.aop.springaop.data.*.*(..))")
 	public void before(JoinPoint joinPoint) {
 		//what to do?
 		logger.info("Check for User Access");
