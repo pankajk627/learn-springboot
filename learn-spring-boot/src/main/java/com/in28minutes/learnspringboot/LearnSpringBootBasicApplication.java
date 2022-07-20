@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.in28minutes.learnspringboot.basic.BinarySearchImpl;
 
+// This is test for fork.
 //@SpringBootApplication
 @Configuration
 @ComponentScan //@ComponentScan("com.in28minutes.learnspringboot")
