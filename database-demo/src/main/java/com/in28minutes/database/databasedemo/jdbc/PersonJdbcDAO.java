@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.in28minutes.database.databasedemo.entity.Person;
+import com.in28minutes.database.databasedemo.entity.PersonJdbc;
 
 @Repository
 public class PersonJdbcDAO {
@@ -19,29 +19,29 @@ public class PersonJdbcDAO {
 	JdbcTemplate jdbcTemplate;
 	
 	// Creating custom Spring JDBC RowMapper
-	class PersonRowMapper implements RowMapper<Person>{
+	class PersonRowMapper implements RowMapper<PersonJdbc>{
 
 		@Override
-		public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Person person = new Person();
-			person.setId(rs.getInt("id"));
-			person.setName(rs.getString("name"));
-			person.setLocation(rs.getString("location"));
-			return person;
+		public PersonJdbc mapRow(ResultSet rs, int rowNum) throws SQLException {
+			PersonJdbc personJdbc = new PersonJdbc();
+			personJdbc.setId(rs.getInt("id"));
+			personJdbc.setName(rs.getString("name"));
+			personJdbc.setLocation(rs.getString("location"));
+			return personJdbc;
 		}
 		
 	}
 	
-	public List<Person> findAll(){
+	public List<PersonJdbc> findAll(){
 		
-//		return jdbcTemplate.query(" select * from person", new BeanPropertyRowMapper<Person>(Person.class));
+//		return jdbcTemplate.query(" select * from person", new BeanPropertyRowMapper<PersonJdbc>(PersonJdbc.class));
 		return jdbcTemplate.query(" select * from person", new PersonRowMapper());
 	}
 	
 	@SuppressWarnings("deprecation")
-	public Person findById(int id){
+	public PersonJdbc findById(int id){
 		
-		return jdbcTemplate.queryForObject("select * from person where id=?", new Object[] {id}, new BeanPropertyRowMapper<Person>(Person.class));
+		return jdbcTemplate.queryForObject("select * from person where id=?", new Object[] {id}, new BeanPropertyRowMapper<PersonJdbc>(PersonJdbc.class));
 		
 	}
 	
@@ -51,17 +51,17 @@ public class PersonJdbcDAO {
 		
 	}
 	
-	public int insert(Person person){
+	public int insert(PersonJdbc personJdbc){
 		
 		return jdbcTemplate.update("insert into person (id, name, location) " + "values(?,?,?)", 
-				new Object[] {person.getId(), person.getName(), person.getLocation()});
+				new Object[] {personJdbc.getId(), personJdbc.getName(), personJdbc.getLocation()});
 		
 	}
 	
-	public int update(Person person){
+	public int update(PersonJdbc personJdbc){
 		
 		return jdbcTemplate.update("update person " + "set name = ? " + "where id = ?", 
-				new Object[] {person.getName(), person.getId()});
+				new Object[] {personJdbc.getName(), personJdbc.getId()});
 		
 	}
 

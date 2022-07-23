@@ -1,14 +1,13 @@
 package com.in28minutes.database.databasedemo.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name = "person") - Table name matches with class name, so we need not specify
-public class Person {
+@Table(name = "person") 
+public class PersonJpa {
 	
 	@Id // To specify the Primary Key
 	@GeneratedValue // To Auto generate the id values by Hibernate
@@ -18,18 +17,18 @@ public class Person {
 	private String name;
 	private String location;
 	
-	public Person() {
+	public PersonJpa() {
 		
 	}
 	
-	public Person(int id, String name, String location) {
+	public PersonJpa(int id, String name, String location) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.location = location;
 	}
 
-	public Person(String name, String location) {
+	public PersonJpa(String name, String location) {
 		super();
 		this.name = name;
 		this.location = location;
