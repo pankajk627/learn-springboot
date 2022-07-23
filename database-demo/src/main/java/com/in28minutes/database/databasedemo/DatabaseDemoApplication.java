@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.in28minutes.database.databasedemo.entity.Person;
 import com.in28minutes.database.databasedemo.jdbc.PersonJdbcDAO;
 
 @SpringBootApplication
@@ -26,7 +27,12 @@ public class DatabaseDemoApplication implements CommandLineRunner {
 		
 		logger.info("All Persons -> {}", personJdbcDAO.findAll());
 		logger.info("Person with id as 10001 -> {}", personJdbcDAO.findById(10001));
-		logger.info("No of row deleted -> {}", personJdbcDAO.deleteById(10002));
+		logger.info("Deleting Person(10002) -> No. of rows deleted - {}", personJdbcDAO.deleteById(10002));
+		logger.info("All Persons -> {}", personJdbcDAO.findAll());
+		logger.info("Adding Person(10004) -> No. of rows added -> {}", personJdbcDAO.insert(new Person(10004,"Susmita","Kolkata")));
+		logger.info("All Persons -> {}", personJdbcDAO.findAll());
+		logger.info("Updating Person(10004) -> No. of rows updated -> {}", personJdbcDAO.update(new Person(10004,"Pankaj","Kolkata")));
+		logger.info("All Persons -> {}", personJdbcDAO.findAll());
 		
 	}
 
