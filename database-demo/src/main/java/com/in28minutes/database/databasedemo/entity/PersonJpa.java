@@ -3,10 +3,12 @@ package com.in28minutes.database.databasedemo.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "person") 
+@NamedQuery(name = "find_all_person", query = "select p from PersonJpa p")
 public class PersonJpa {
 	
 	@Id // To specify the Primary Key
@@ -60,7 +62,7 @@ public class PersonJpa {
 
 	@Override
 	public String toString() {
-		return "\nPerson [id=" + id + ", name=" + name + ", location=" + location + "]";
+		return "\nPerson id=" + id + ", name=" + name + ", location=" + location + "]";
 	}
 	
 }
