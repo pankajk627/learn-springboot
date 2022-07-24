@@ -28,7 +28,7 @@ public class SpringDataDemoApplication implements CommandLineRunner {
 		logger.info("All Persons -> {}", repository.findAll());
 		logger.info("Person with id as 10001 -> {}", repository.findById(10001));
 		logger.info("Updating PersonJpa(10003)", repository.save(new PersonJpa(10003,"Peter","Hague")));
-		logger.info("Inserting PersonJpa(1)", repository.save(new PersonJpa("Pankaj","Lakhisarai")));		
+		logger.info("Inserting PersonJpa(1)", repository.save(new PersonJpa("Susmita","Kolkata")));		
 		repository.deleteById(10002);
 		
 	}
