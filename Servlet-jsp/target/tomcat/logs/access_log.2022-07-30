@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:51:33 +0530] "GET / HTTP/1.1" 200 388 http-bio-8080-exec-2 261
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:52:21 +0530] "GET /?name=Pankaj&password=dummy HTTP/1.1" 200 388 http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:52:56 +0530] "PUT /?name=Pankaj&password=dummy HTTP/1.1" 405 1065 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:53:37 +0530] "PUT /login.do?name=Pankaj&password=dummy HTTP/1.1" 405 1065 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:54:13 +0530] "PUT /login.do?name=Pankaj&password=dummy HTTP/1.1" 405 1065 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:54:40 +0530] "PUT /login.do?name=Pankaj&password=dummy HTTP/1.1" 405 1065 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:54:52 +0530] "PUT /login.do HTTP/1.1" 405 1065 http-bio-8080-exec-8 4
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:54:57 +0530] "GET /login.do HTTP/1.1" 200 388 http-bio-8080-exec-9 9
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:15:55:34 +0530] "POST /login.do?name=Pankaj&password=dummy HTTP/1.1" 200 183 http-bio-8080-exec-10 18

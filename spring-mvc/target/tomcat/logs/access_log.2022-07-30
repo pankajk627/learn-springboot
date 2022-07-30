@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:12:20:25 +0530] "GET /login HTTP/1.1" 200 283 http-bio-8080-exec-2 199
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:12:23:07 +0530] "POST /login?name=in28Minutes&password=dummy HTTP/1.1" 200 87 http-bio-8080-exec-5 93
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:12:23:26 +0530] "POST /login?name=in28Minutes&password=dummy2 HTTP/1.1" 200 303 http-bio-8080-exec-6 7
+0:0:0:0:0:0:0:1 - - [30/Jul/2022:12:23:44 +0530] "POST /login?name=in28Minutes&password=dummy HTTP/1.1" 200 87 http-bio-8080-exec-7 9
