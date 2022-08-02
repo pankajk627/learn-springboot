@@ -22,7 +22,7 @@ public class WebServiceConfig {
 	// url -> /ws/*
 
 	@Bean
-	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
+	ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
 
 		MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
 		messageDispatcherServlet.setApplicationContext(context);
@@ -36,7 +36,7 @@ public class WebServiceConfig {
 	// course-details.xsd
 
 	@Bean(name = "courses")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema coursesSchema) {
+	DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema coursesSchema) {
 		DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
 		// PortType - CoursePort
 		definition.setPortTypeName("CoursePort");
@@ -51,7 +51,7 @@ public class WebServiceConfig {
 	}
 
 	@Bean
-	public XsdSchema coursesSchema() {
+	XsdSchema coursesSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("course-details.xsd"));
 	}
 }
