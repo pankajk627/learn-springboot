@@ -16,7 +16,9 @@ import com.in28minutes.courses.GetAllCourseDetailsResponse;
 import com.in28minutes.courses.GetCourseDetailsRequest;
 import com.in28minutes.courses.GetCourseDetailsResponse;
 import com.in28minutes.soap.webservices.soapcoursemanagement.soap.bean.Course;
+import com.in28minutes.soap.webservices.soapcoursemanagement.soap.exception.CourseNotFoundException;
 import com.in28minutes.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsService;
+import com.in28minutes.soap.webservices.soapcoursemanagement.soap.service.CourseDetailsService.Status;
 
 @Endpoint
 public class CourseDetailsEndpoint {
@@ -36,6 +38,9 @@ public class CourseDetailsEndpoint {
 	public GetCourseDetailsResponse processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
 
 		Course course = service.findById(request.getId());
+
+		if (course == null)
+			throw new CourseNotFoundException("Invalid Course Id " + request.getId());
 
 		return mapCourseDetails(course);
 	}
@@ -80,12 +85,19 @@ public class CourseDetailsEndpoint {
 	@ResponsePayload
 	public DeleteCourseDetailsResponse deleteCourseDetailsRequest(@RequestPayload DeleteCourseDetailsRequest request) {
 
-		int status = service.deleteById(request.getId());
+		Status status = service.deleteById(request.getId());
 
 		DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
-		response.setStatus(status);
+		response.setStatus(mapStatus(status));
 
 		return response;
+	}
+
+	private com.in28minutes.courses.Status mapStatus(Status status) {
+
+		if (status == Status.FAILURE)
+			return com.in28minutes.courses.Status.FAILURE;
+		return com.in28minutes.courses.Status.SUCCESS;
 	}
 
 }

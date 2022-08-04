@@ -11,9 +11,9 @@ import com.in28minutes.soap.webservices.soapcoursemanagement.soap.bean.Course;
 @Component
 public class CourseDetailsService {
 
-//	public enum Status {
-//		SUCCESS, FAILURE;
-//	}
+	public enum Status {
+		SUCCESS, FAILURE;
+	}
 
 	private static List<Course> courses = new ArrayList<>();
 
@@ -45,18 +45,18 @@ public class CourseDetailsService {
 		return courses;
 	}
 
-	public int deleteById(int id) {
+	public Status deleteById(int id) {
 		Iterator<Course> iterator = courses.iterator();
 		while (iterator.hasNext()) {
 			Course course = iterator.next();
 			if (course.getId() == id) {
 				iterator.remove();
-				// return Status.SUCCESS;
-				return 1;
+				return Status.SUCCESS;
+				// return 1;
 			}
 		}
-		// return Status.FAILURE;
-		return 0;
+		return Status.FAILURE;
+		// return 0;
 	}
 
 	// updating course & new course
